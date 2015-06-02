@@ -31,8 +31,13 @@ function readJson(file, log_, strict_, cb_) {
 	// We replace cb with our own callback that modifies
 	// data.{dependencies, devDependencies} first
 	_readJson(file, log, strict, function(err, data) {
+		// Don't serve fake deps when reading from ~/.npm; that
+		// would be bad because it would affect projects that don't
+		// want anything blacklisted.
+		const inDotNpm = /[\/\\]\.npm[\/\\]/.test(file);
+
 		const depsBlacklist = process.env.DEPS_BLACKLIST;
-		if(isObject(data) && depsBlacklist) {
+		if(!inDotNpm && isObject(data) && depsBlacklist) {
 			for(const entry of depsBlacklist.split(' ')) {
 				if(!entry) {
 					continue;
