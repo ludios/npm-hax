@@ -38,7 +38,7 @@ The syntax is:
 DEPS_BLACKLIST="module/dep ..." npm-hax any-npm-command
 ```
 
-which will prevent npm from seeing `"dep": "..."` in both `dependencies`
+which will prevent npm from seeing `"dep": "version"` in both `dependencies`
 and `devDependencies` in any `package.json` with `"name": "module"`.
 
 
