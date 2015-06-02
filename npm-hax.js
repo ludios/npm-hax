@@ -1,6 +1,11 @@
+#!/usr/bin/env iojs
+
 "use strong";
 "use strict";
 
+const which = require('which');
+
+const Module = require('module');
 const _require = Module.prototype.require;
 const _readJson = require('read-package-json');
 
@@ -21,7 +26,7 @@ function readJson(file, log_, strict_, cb_) {
 
 	// We replace cb with our own callback that modifies
 	// data.dependencies before it is given to the user.
-	readJson_(file, log, strict, function(err, data) {
+	_readJson(file, log, strict, function(err, data) {
 		if(data) {
 			if(typeof data.dependencies === "object") {
 				delete data.dependencies["request"];
@@ -37,3 +42,5 @@ Module.prototype.require = function cachePathsRequire(name) {
 	}
 	return _require.call(this, name);
 }
+
+require(which.sync('npm'));
