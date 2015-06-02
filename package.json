@@ -1,15 +1,16 @@
 {
   "name": "npm-hax",
   "version": "0.1.0",
-  "description": "",
+  "description": "Blacklist a package.json dependency entry at any depth in your dependency tree, making it invisible to npm install and other npm commands",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "preferGlobal": true,
   "bin": {
     "npm-hax": "./cli.js"
   },
-  "author": "",
+  "author": "Ivan Kozik",
   "license": "ISC",
   "dependencies": {
     "read-package-json": "^2.0.0",
