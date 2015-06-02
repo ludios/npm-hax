@@ -37,7 +37,7 @@ function readJson(file, log_, strict_, cb_) {
 				if(!entry) {
 					continue;
 				}
-				_ = entry.split('/');
+				const _ = entry.split('/');
 				const depender = _[0];
 				const dependee = _[1];
 				if(depender === data.name) {
