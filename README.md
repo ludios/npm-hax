@@ -36,7 +36,7 @@ Usage
 The syntax is:
 
 ```
-DEPS_BLACKLIST="depender/dependency ..."
+DEPS_BLACKLIST="depender/dependency ..." npm-hax any-npm-command
 ```
 
 which will prevent npm from seeing `"dependency"` in the `dependencies` and `devDependencies` objects in any `package.json` with `name` `"depender"`.
@@ -51,6 +51,8 @@ DEPS_BLACKLIST="googleapis/request google-auth-library/request gtoken/request ga
 find node_modules/ | grep request
 # victory dance
 ```
+
+Remember to run `npm-hax` and not `npm`!!
 
 [npm-image]: https://img.shields.io/npm/v/npm-hax.svg
 [npm-url]: https://npmjs.org/package/npm-hax
