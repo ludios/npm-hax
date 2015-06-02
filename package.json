@@ -2,10 +2,14 @@
   "name": "npm-hax",
   "version": "0.1.0",
   "description": "Blacklist a package.json dependency entry at any depth in your dependency tree, making it invisible to npm install and other npm commands",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "homepage": "https://github.com/ludios/npm-hax",
+  "issues": "https://github.com/ludios/npm-hax/issues",
+  "keywords": [
+    "npm",
+    "dependency",
+    "dependencies"
+  ],
+  "main": "cli.js",
   "preferGlobal": true,
   "bin": {
     "npm-hax": "./cli.js"
@@ -15,5 +19,9 @@
   "dependencies": {
     "read-package-json": "^2.0.0",
     "which": "^1.1.1"
+  },
+  "repository": "ludios/npm-hax",
+  "engines": {
+    "iojs": ">= 2.0.0"
   }
 }
