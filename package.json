@@ -1,6 +1,6 @@
 {
   "name": "npm-hax",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Blacklist a package.json dependency entry at any depth in your dependency tree, making it invisible to npm install and other npm commands",
   "homepage": "https://github.com/ludios/npm-hax",
   "issues": "https://github.com/ludios/npm-hax/issues",
@@ -22,6 +22,7 @@
   },
   "repository": "ludios/npm-hax",
   "engines": {
-    "iojs": ">= 2.0.0"
+    "iojs": ">= 2.0.0",
+    "node": ">= 4.0.0"
   }
 }
